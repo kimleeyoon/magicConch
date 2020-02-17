@@ -1,0 +1,19 @@
+service: magicconch
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ap-northeast-2
+
+functions:
+  magicConch:
+    handler: src/index.myFunction
+    events:
+      - http:
+          path: /startAction
+          method: POST
+      - http:
+          path: /answerAction
+          method: POST
+plugins:
+  - serverless-offline

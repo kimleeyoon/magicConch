@@ -15,5 +15,11 @@ functions:
       - http:
           path: /answerAction
           method: POST
+  health:
+    handler: src/index.health
+    events:
+      - http:
+          path: /health
+          method: GET
 plugins:
   - serverless-offline

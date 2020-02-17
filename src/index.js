@@ -5,6 +5,13 @@ const defaultForm = {
   "directives": []
 };
 
+exports.health = (event, context, callback) => {
+  callback(null, {
+    statusCode: 200,
+    body: "OK"
+  });
+}
+
 exports.myFunction = (event, context, callback) => {
   try {
     var requestBody = JSON.parse(event.body);
